@@ -1,0 +1,8 @@
+{
+  "name": "Guides structure API",
+  "type": "helper",
+  "properties": {
+    "user_type": "instructor",
+    "component": "assignment-author"
+  }
+}
