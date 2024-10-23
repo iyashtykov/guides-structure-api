@@ -196,19 +196,19 @@ const init = () => {
     buttonUpdate.innerHTML = 'update guides page'
     buttonDelete.innerHTML = 'delete guides page'
     buttonGetStructure.onclick = () => {
-        setTimeout(getGuidesStructure,5000)
+        setTimeout(getGuidesStructure,500)
     }
     buttonGet.onclick = () => {
-        setTimeout(getGuidesPage,5000)
+        setTimeout(getGuidesPage,500)
     }
     buttonAdd.onclick = () => {
-        setTimeout(addGuidesPage,5000)
+        setTimeout(addGuidesPage,500)
     }
     buttonUpdate.onclick = () => {
-        setTimeout(updateGuidesPage,5000)
+        setTimeout(updateGuidesPage,500)
     }
     buttonDelete.onclick = () => {
-        setTimeout(deleteGuidesPage,5000)
+        setTimeout(deleteGuidesPage,500)
     }
     modal.append(buttonGetStructure)
     modal.append(buttonGet)
@@ -218,4 +218,4 @@ const init = () => {
     document.querySelector('body').append(modal)
 }
 
-setTimeout(init, 5000)
+setTimeout(init, 500)
