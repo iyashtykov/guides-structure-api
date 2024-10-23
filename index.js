@@ -16,7 +16,7 @@ function getBoolean() {
   return Math.random() < 0.5;
 }
 
-function generateSettings(){
+function generateSettings(operation){
     settings = {}
     const layouts = [
         window.codioIDE.guides.structure.LAYOUT.L_1_PANEL,
@@ -31,9 +31,15 @@ function generateSettings(){
         window.codioIDE.guides.structure.ITEM_TYPES.SECTION,
         window.codioIDE.guides.structure.ITEM_TYPES.CHAPTER
     ]
-    settings.type = pageTypes[getRandomInt(pageTypes.length)]
-    
-    settings.title = settings.type + ' ' + getDateAsString()
+    if(operation === 'add'){
+        settings.type = pageTypes[getRandomInt(pageTypes.length)]
+        settings.title = settings.type + ' ' + getDateAsString()
+    }
+    else if (operation === 'update'){
+        settings.title = 'updated ' + getDateAsString()
+    }
+    else
+        settings.title = 'unknown operation'
 
     settings.guidesOnLeft = getBoolean()
     settings.showFileTree = getBoolean()
@@ -105,7 +111,7 @@ const addGuidesPage = async () => {
     parentId = null   
 
     try {
-        const res = await window.codioIDE.guides.structure.add(generateSettings(), parentId, lastIndex)
+        const res = await window.codioIDE.guides.structure.add(generateSettings('add'), parentId, lastIndex)
         console.log('result: ', res)
     } catch (e) {
         console.error(e)
@@ -127,7 +133,7 @@ const updateGuidesPage = async () => {
     const structure = await window.codioIDE.guides.structure.getStructure()
     const latestPageId = structure.children[structure.children.length - 1].id
     try {
-        await window.codioIDE.guides.structure.update(latestPageId, generateSettings())
+        await window.codioIDE.guides.structure.update(latestPageId, generateSettings('update'))
         console.log('item updated')
     } catch (e) {
         console.error(e)
