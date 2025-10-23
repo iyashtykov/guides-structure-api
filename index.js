@@ -183,7 +183,7 @@ const init = () => {
 
     // Or use actions from custom area 
     const modal = document.createElement('div')
-    modal.id = 'customModalId'
+    modal.id = 'guidesStructureModalId'
     modal.style = style
     const buttonGetStructure = document.createElement('button')
     const buttonGet = document.createElement('button')
