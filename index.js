@@ -173,7 +173,7 @@ const guidesStructureStyle = `
     padding: 10px;
 `
 
-const init = () => {
+const initGuidesStructure = () => {
     // Use actions from menu Codio/...
     addMenuItem({title: 'Codio'}, {id: GET_GUIDES_STRUCTURE, title: 'get guides structure', callback: getGuidesStructure})
     addMenuItem({title: 'Codio'}, {id: GET_GUIDES_PAGE, title: 'get guides page', callback: getGuidesPage})
@@ -223,4 +223,4 @@ const init = () => {
     document.querySelector('body').append(modal)
 }
 
-setTimeout(init, 100)
+setTimeout(initGuidesStructure, 100)
