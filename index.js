@@ -162,7 +162,7 @@ const addMenuItem = (parentDescriptor, item) => {
   window.codioIDE.menu.addItem(parentDescriptor, item)
 }
 
-const style = `
+const guidesStructureStyle = `
     width: 140px;
     height: 110px;
     z-index: 10000;
@@ -184,7 +184,7 @@ const init = () => {
     // Or use actions from custom area 
     const modal = document.createElement('div')
     modal.id = 'guidesStructureModalId'
-    modal.style = style
+    modal.style = guidesStructureStyle
     const buttonGetStructure = document.createElement('button')
     const buttonGet = document.createElement('button')
     const buttonAdd = document.createElement('button')
@@ -223,4 +223,4 @@ const init = () => {
     document.querySelector('body').append(modal)
 }
 
-setTimeout(init, 500)
+setTimeout(init, 100)
