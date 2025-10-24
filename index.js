@@ -167,8 +167,8 @@ const guidesStructureStyle = `
     height: 110px;
     z-index: 10000;
     position: absolute;
-    left: 10px;
-    top: 600px;
+    left: 15px;
+    top: 550px;
     background-color: white;
     padding: 10px;
 `
